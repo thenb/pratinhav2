@@ -1,0 +1,56 @@
+<ion-view hide-nav-bar="true" view-title="Login"> 
+  <ion-content style="background-image: url(../img/backlogin.png)">
+	  <div class="im-wrapper">
+		<form name="formLogin" style="padding-top: 15%;">
+		  <div class="row">
+			<ion-col col-12 style="margin: 0 auto; padding-bottom:20px;">
+				<img src="img/login.png" width="200px">
+			</ion-col>
+		  </div>
+		  <div class="list">
+			<label class="item item-input item-floating-label">
+				<span class="input-label-login">E-mail</span>
+				<input type="text" placeholder="E-mail" ng-model="user.email" name="email" required>			
+				<div ng-messages="formLogin.email.$error">
+					<div ng-message="required">
+						<p style="color:red">Favor inserir o e-mail.</p>
+					</div>						  
+				</div>					
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label-login">Senha</span>
+				<input type="password" placeholder="Senha" ng-model="user.senha" name="senha1" required>			
+				<div ng-messages="formLogin.senha1.$error">
+					<div ng-message="required">
+						<p style="color:red">Favor inserir a senha.</p>
+					</div>	
+					<div ng-message="naoExiste">
+					<p style="color:red">Usuário não cadastrado ou senha incorreta.</p>
+					</div>	
+				</div>					
+			</label> 
+			<label class="item">
+				<button class="button button-block button-login" ng-click="login(formLogin)">Entrar</button>			
+			</label>
+			<div class="row">
+				<li class="item item-toggle" style="color: #fff;">
+				   <span>Salvar Dados</span>
+				   <label class="toggle toggle-positive">
+					 <input type="checkbox" ng-model="user.lembrar" name="lembrar">
+					 <div class="track">
+					   <div class="handle"></div>
+					 </div>
+				   </label>
+				</li>
+			</div>
+			<li class="item">
+				<a style="color: #b2b2b2; font-size: 13px;" href="http://web.eusoupratadacasa.com.br:9000/recover.html" target="_blank" class="pull-right">Não lembra a senha?</a>
+			</li>
+		  </div> 
+		</form>
+	</div> 
+  </ion-content>
+  <div class="bar bar-footer" style="background-color: transparent!important;">
+		<h5 class="title"><i class="icon ion-heart"></i> Desenvolvido por DNBproject</h5>
+	</div>
+</ion-view>

@@ -1,0 +1,235 @@
+<ion-view>
+	<ion-nav-title><img src="img/logo4.png" style="padding-top:10px; width: 65%;"/></ion-nav-title>
+	<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+	</ion-nav-buttons>	
+	<ion-content style="background: #fff;">
+		<div class="hero" style="background-color: #27386D">
+			<div class="content">
+				<div class="avatar" style="background-image: url('img/user.jpg');"></div>				
+				<h3>{{cliente1.nome}} {{cliente1.sobrenome}}</</h3>
+				<h4 style="font-style: italic;">Cliente</h4>				
+			</div>
+		</div>			
+		<ion-card class="text-center">
+			<div class="list" style="padding-bottom:40px">				
+				<div class="tabs tabs-dark tabs-icon-top static">
+					<a ng-click="changeTabs(0)" class="tab-item">
+						<i class="icon ion-person"></i> Dados Cliente
+					</a>
+					<a ng-click="changeTabs(1)" class="tab-item">
+						<i class="icon ion-gear-b"></i> Fases
+					</a>
+					<a ng-click="changeTabs(2)" class="tab-item">
+						<i class="icon ion-person-stalker"></i> Responsáveis
+					</a>
+					<a ng-click="changeTabs(3)" class="tab-item">
+						<i class="icon ion-document"></i> Observação
+					</a>
+				</div>				
+				<div ng-if="tabs==0">
+					<div class="im-wrapper">				
+						<div class="list">
+						  <label class="item item-input item-floating-label ">
+							<span class="input-label">Nome</span>
+							<input type="text" placeholder="Nome" ng-model="cliente1.nome" ng-disabled="true" style="background-color:white">
+						  </label>
+						  <label class="item item-input item-floating-label ">
+							<span class="input-label">Sobrenome</span>
+							<input type="text" placeholder="Sobrenome" ng-model="cliente1.sobrenome" ng-disabled="true" style="background-color:white">
+						  </label>
+						  <label class="item item-input item-floating-label">
+							<span class="input-label">Indicado Por</span>
+							<input type="text" placeholder="Indicador por" ng-model="indicou.nome" ng-disabled="true" style="background-color:white">
+						  </label>						  
+						  <label class="item item-input item-floating-label">
+							<span class="input-label">Data Nascimento</span>
+							<input type="text"  ng-model="cliente1.data_nascimento" ui-date-mask="DD-MM-YYYY"  ng-disabled="true"  style="background-color:white">
+						  </label>
+						  <label class="item item-input item-floating-label">
+							<span class="input-label">Telefone 1</span>
+							<input type="text" placeholder="Telefone 1" ng-model="cliente1.telefone" ui-br-phone-number  ng-disabled="true"  style="background-color:white">
+						  </label>
+						  <label class="item item-input item-floating-label">
+							<span class="input-label">Telefone 2</span>
+							<input type="text" placeholder="Telefone 2" ng-model="cliente1.celular" ui-br-phone-number ng-disabled="true" style="background-color:white">
+						  </label>
+						  <label class="item item-input item-floating-label">
+							<span class="input-label">E-mail</span>
+							<input type="text" placeholder="E-mail" ng-model="cliente1.email" ng-disabled="true" style="background-color:white">
+						  </label>
+						  <label class="item item-input item-floating-label">
+							<span class="input-label">Cep</span>
+							<input type="text" placeholder="Cep" ng-model="cliente1.cep" ui-br-cep-mask ng-disabled="true" style="background-color:white">
+						  </label>
+						  <label class="item item-input item-floating-label">
+							<span class="input-label">Endereço</span>
+							<input type="text" placeholder="Endereço" ng-model="cliente1.endereco" ng-disabled="true" style="background-color:white">
+						  </label>
+						  <label class="item item-input item-floating-label">
+							<span class="input-label">Bairro</span>
+							<input type="text" placeholder="Bairro" ng-model="cliente1.bairro" ng-disabled="true" style="background-color:white">
+						  </label>
+						  <label class="item item-input item-floating-label">
+							<span class="input-label">Número</span>
+							<input type="text" placeholder="Número" ng-model="cliente1.numero" ng-disabled="true" style="background-color:white">
+						  </label>
+						  <label class="item item-input item-floating-label">
+							<span class="input-label">Cidade</span>
+							<input type="text" placeholder="Cidade" ng-model="cliente1.cidade" ng-disabled="true" style="background-color:white">
+						  </label>
+						  <label class="item item-input item-floating-label">
+							<span class="input-label">UF</span>
+							<input type="text" placeholder="UF" ng-model="cliente1.uf" ng-disabled="true" style="background-color:white">
+						  </label>
+						</div>	
+					</div>	
+				</div>				
+				<div ng-if="tabs==1">
+					<div class="im-wrapper">				
+						<header class="panel-heading">	
+							<h4 class="panel-title">Fases da Obra</h4>
+						</header>
+						<div class = "list">
+							<li class="item item-checkbox">
+							   Fundação
+							   <label class="checkbox">
+							   <input type="checkbox" ng-model="cliente1.fase1" ng-disabled="true">
+							   </label>
+							</li>
+							<li class="item item-checkbox">
+							   Projeto
+							   <label class="checkbox">
+							   <input type="checkbox" ng-model="cliente1.fase2" ng-disabled="true">
+							   </label>
+							</li>
+							<li class="item item-checkbox">
+							   Alvenaria
+							   <label class="checkbox">
+							   <input type="checkbox" ng-model="cliente1.fase3"  ng-disabled="true">
+							   </label>
+							</li>
+							<li class="item item-checkbox">
+							   Laje
+							   <label class="checkbox">
+							   <input type="checkbox" ng-model="cliente1.fase4"  ng-disabled="true">
+							   </label>
+							</li>				
+							<li class="item item-checkbox">
+							   Telhado
+							   <label class="checkbox">
+							   <input type="checkbox" ng-model="cliente1.fase5"  ng-disabled="true">
+							   </label>
+							</li>
+							<li class="item item-checkbox">
+							   Reboco
+							   <label class="checkbox">
+							   <input type="checkbox" ng-model="cliente1.fase6"  ng-disabled="true">
+							   </label>
+							</li>
+							<li class="item item-checkbox">
+							   Forro
+							   <label class="checkbox">
+							   <input type="checkbox" ng-model="cliente1.fase7"  ng-disabled="true">
+							   </label>
+							</li>
+							<li class="item item-checkbox">
+							   Acabamento
+							   <label class="checkbox">
+							   <input type="checkbox" ng-model="cliente1.fase8"  ng-disabled="true">
+							   </label>
+							</li>
+							<li class="item item-checkbox">
+							   Decoração
+							   <label class="checkbox">
+							   <input type="checkbox" ng-model="cliente1.fase9"  ng-disabled="true">
+							   </label>
+							</li>					
+						</div>
+						<header class="panel-heading">	
+							<h4 class="panel-title">Tipo da Obra</h4>
+						</header>
+						<div class = "list">
+							<li class="item item-checkbox">
+							   Residencial
+							   <label class="checkbox">
+							  <input  type="radio" id="residencial"  name="tipo" ng-model="cliente1.tipo"  ng-value="0" ng-disabled="true">
+							   </label>
+							</li>
+							<li class="item item-checkbox">
+							   Comercial
+							   <label class="checkbox">
+							   <input type="radio" id="comercial"  name="tipo" ng-model="cliente1.tipo"  ng-value="1" ng-disabled="true">
+							   </label>
+							</li>
+							<li class="item item-checkbox">
+							   Prédio
+							   <label class="checkbox">
+							   <input type="radio" id="predio"  name="tipo" ng-model="cliente1.tipo"  ng-value="2" ng-disabled="true">
+							   </label>
+							</li>
+							<li class="item item-checkbox">
+							   Térrea
+								<label class="checkbox">
+									<input type="radio" id="terrea" name="terrea" ng-model="cliente1.terrea"  ng-value="0" ng-disabled="true">
+								</label>
+							</li>
+							<li class="item item-checkbox">
+							   Sobrado
+								<label class="checkbox">
+									<input type="radio" id="sobrado"  name="terrea" ng-model="cliente1.terrea"  ng-value="1" ng-disabled="true">
+								</label>
+							</li>											
+						</div>						
+					</div>
+				</div>
+				<div ng-if="tabs==2">
+					<div class="im-wrapper">				
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Nome do Especificador</span>
+							<input type="text" placeholder="Nome do Especificador" ng-model="especificador.nome" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Telefone 1 do Especificador</span>
+							<input type="text" placeholder="Telefone 1 Especificador" ui-br-phone-number ng-model="especificador.telefone" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Telefone 2 do Especificador</span>
+							<input type="text" placeholder="Telefone 2 Especificador" ui-br-phone-number ng-model="especificador.celular" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">E-mail do Especificador</span>
+							<input type="text" placeholder="Email do Especificador" ng-model="especificador.email" ng-disabled="true" style="background-color:white">
+						</label>					
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Empreiteiro</span>
+							<input type="text" placeholder="Empreiteiro" ng-model="cliente1.nome_empreiteiro" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Telefone 1 Empreiteiro</span>
+							<input type="text" placeholder="Telefone 1 Empreiteiro" ui-br-phone-number ng-model="cliente1.telefone1_empreiteiro" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Telefone 2 Empreiteiro</span>
+							<input type="text" placeholder="Telefone 2 Empreiteiro" ui-br-phone-number ng-model="cliente1.telefone2_empreiteiro" ng-disabled="true" style="background-color:white">
+						</label>															
+					</div>
+				</div>
+				<div ng-if="tabs==3">
+					<div class="im-wrapper">					
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Observações</span>
+							<textarea placeholder="Observações" ng-model="cliente1.observacoes" ng-disabled="true" rows="3" style="background-color:white"></textarea>
+						</label>	
+					</div>
+				</div>
+			</div>
+		</ion-card>
+		<br><br>
+	</ion-content>
+	<div class="bar bar-footer bar-dark">
+		<h1 class="title"><i class="icon ion-heart"></i> Desenvolvido por DNBproject</h1>
+	</div>
+</ion-view>

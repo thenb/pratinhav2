@@ -1,0 +1,64 @@
+<ion-view ng-init="configFCM()">
+	<ion-nav-title><img src="img/logo4.png" style="padding-top:10px; width: 65%;"/></ion-nav-title>
+	<ion-nav-buttons side="left">    
+	</ion-nav-buttons>
+	<ion-content style="background: #fff;">	
+		<div class="hero" style="background-color: #27386D">
+            <div class="content">
+                <div ng-if="!user.login.url_perfil" class="avatar" style="background-image: url('img/user.jpg');"></div>
+				<div ng-if="user.login.url_perfil" class="avatar" style="background-image: url('{{user.login.url_perfil}}');"></div>
+                <h3 ng-if="user.login.id_tipo_login==3">{{user.especificador.nome}} {{user.especificador.sobrenome}}</h3>
+				<h3 ng-if="user.login.id_tipo_login==4">{{user.cliente.nome}} {{user.cliente.sobrenome}}</h3>
+				<h3 ng-if="user.login.id_tipo_login==2">{{user.empresa.nome}}</h3>
+				<h3 ng-if="user.login.id_tipo_login==1">Administrador</h3>
+				<h4 style="font-style: italic;" ng-if="user.login.id_tipo_login==3">Especificador</h4>
+				<h4 style="font-style: italic;" ng-if="user.login.id_tipo_login==4">Cliente</h4>
+				<h4 style="font-style: italic;" ng-if="user.login.id_tipo_login==2">Empresa</h4>
+				<h4 style="font-style: italic;" ng-if="user.login.id_tipo_login==1">Administrador</h4>
+            </div>
+        </div>		
+		<div class="list" style="padding-top:5px;">	       
+            <a ui-sref="app.pontuacoes" class="item item-avatar item-icon-left" ng-if="user.login.id_tipo_login==3">                
+                <span class="itens_medios">Pontos12</span>
+				<span class="badge badge-assertive">{{pontuacaoAtual}}</span>
+                <i class="icon ion-trophy muted"></i>
+            </a>
+			<a ui-sref="app.notificacoes" class="item item-avatar item-icon-left">                
+                <span class="itens_medios">Notificações</span>
+				<span class="badge badge-assertive">{{totalUnreadNotification}}</span>
+                <i class="icon ion-android-notifications muted"></i>
+            </a>
+			<a ui-sref="app.clientes" class="item item-avatar item-icon-left" ng-if="user.login.id_tipo_login==3">
+			    <span class="itens_medios">Indicações</span>
+				<span class="badge badge-assertive">{{totalIndicacoes}}</span>
+                <i class="icon ion-android-hand muted"></i>
+            </a>
+			<a ui-sref="app.clientes" class="item item-avatar item-icon-left" ng-if="user.login.id_tipo_login==2">               
+                <h2>Clientes</h2>
+				<i class="icon ion-person-add muted"></i>
+            </a>	
+			<a ui-sref="app.empresas" class="item item-avatar item-icon-left">               
+                <h2>Empresas</h2>
+				<i class="icon ion-home muted"></i>
+            </a>
+			<a ui-sref="app.especificadores" class="item item-avatar item-icon-left">               
+                <h2>Especificadores</h2>
+				<i class="icon ion-person-stalker muted"></i>
+            </a>								 
+			<a class="item item-avatar item-icon-left" ng-if="user.login.id_tipo_login==2">
+                <span class="itens_medios">Presença</span>
+				<span class="badge badge-assertive">{{totalPresencas}}</span>			
+                <i class="icon ion-calendar muted"></i>
+            </a>
+			<a ui-sref="app.visitas" class="item item-avatar item-icon-left" ng-if="user.login.id_tipo_login==3 || user.login.id_tipo_login==4">
+                <span class="itens_medios">Visitas</span>
+				<span class="badge badge-assertive">{{totalVisitas}}</span>
+               <i class="icon ion-coffee muted"></i>
+            </a>						 			
+			<br><br>
+        </div>			
+	</ion-content>
+	<div class="bar bar-footer bar-dark">
+		<h1 class="title"><i class="icon ion-heart"></i> Desenvolvido por DNBproject</h1>
+	</div>
+</ion-view>

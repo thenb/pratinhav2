@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "903930090400",
+    "firebase_url": "https://pratadacasa-178717.firebaseio.com",
+    "project_id": "pratadacasa-178717",
+    "storage_bucket": "pratadacasa-178717.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903930090400:android:984082b8d8fe07be",
+        "android_client_info": {
+          "package_name": "br.com.pratadacada.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903930090400-var1gho4oqq7uo9adr38bbh7nij29e79.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7KHp12PIhxsz8PkmIM__Ss5UHoutCTK4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

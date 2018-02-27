@@ -1,0 +1,169 @@
+<ion-view>
+	<ion-nav-title><img src="img/logo4.png" style="padding-top:10px; width: 65%;"/></ion-nav-title>
+	<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+	</ion-nav-buttons>
+	<ion-content style="background: #fff;">
+	<form name="formPerfil">
+		<div class="hero" style="background-color: #27386D; height: 220px;">
+			<div class="content">				
+				<div ng-if="!user.login.url_perfil" class="avatar" style="background-image: url('img/user.jpg');"></div>
+				<div ng-if="user.login.url_perfil" class="avatar" style="background-image: url('{{user.login.url_perfil}}');"></div>				
+				<h3 ng-if="user.login.id_tipo_login==3">{{user.especificador.nome}} {{user.especificador.sobrenome}}</h3>
+				<h3 ng-if="user.login.id_tipo_login==4">{{user.cliente.nome}} {{user.cliente.sobrenome}}</h3>
+				<h3 ng-if="user.login.id_tipo_login==2">{{user.empresa.nome}}</h3>
+				<h3 ng-if="user.login.id_tipo_login==1">Administrador</h3>
+				<h4 style="font-style: italic;" ng-if="user.login.id_tipo_login==3">Especificador</h4>
+				<h4 style="font-style: italic;" ng-if="user.login.id_tipo_login==4">Cliente</h4>
+				<h4 style="font-style: italic;" ng-if="user.login.id_tipo_login==2">Empresa</h4>
+				<h4 style="font-style: italic;" ng-if="user.login.id_tipo_login==1">Administrador</h4>				
+			</div>
+		</div>	
+		<ion-card class="text-center">
+			<div class="list" style="padding-bottom:10px">				
+				<div class="tabs tabs-dark tabs-icon-top static">
+					<a ng-click="changeTabs(0)" class="tab-item">
+						<i class="icon ion-person"></i> Dados Pessoais
+					</a>
+					<a ng-click="changeTabs(1)" class="tab-item">
+						<i class="icon ion-map"></i> Endereço
+					</a>
+					<a ng-click="changeTabs(2)" class="tab-item" ng-show="user.login.id_tipo_login==3">
+						<i class="icon ion-social-usd"></i> Financeiro
+					</a>
+					<a ng-click="changeTabs(3)" class="tab-item">
+						<i class="icon ion-locked"></i> Senha
+					</a>
+				</div>				
+				<div ng-show="tabs==0">
+					<div class="im-wrapper">
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Nome</span>
+							<input type="text" placeholder="Nome" name="nome" ng-model="perfil.nome"  required>
+							<div ng-messages="formPerfil.nome.$error">
+							  <div ng-message="required">
+							  </div>						  
+							</div>					
+						</label>
+						<label class="item item-input item-floating-label" ng-show="user.login.id_tipo_login==3 || user.login.id_tipo_login==4">
+							<span class="input-label">Sobrenome</span>
+							<input type="text" placeholder="Sobrenome" name="sobrenome" ng-model="perfil.sobrenome">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">E-mail</span>
+							<input type="text" placeholder="Nome" name="email" ng-model="login.email" ng-disabled="true" >
+						</label>
+						<label class="item item-input item-floating-label" ng-show="user.login.id_tipo_login==3">
+							<span class="input-label">Empresa</span>
+							<input type="text" placeholder="Empresa" name="empresa" ng-model="perfil.empresa"  >
+						</label>
+						<label class="item item-input item-floating-label" ng-show="user.login.id_tipo_login==2">
+							<span class="input-label">Segmento</span>
+							<input type="text" placeholder="Segmento" name="segmento" ng-model="perfil.segmento"  >
+						</label>
+						<label class="item item-input item-floating-label" ng-show="user.login.id_tipo_login==2">
+							<span class="input-label">Responsável</span>
+							<input type="text" placeholder="Responsável" name="responsavel" ng-model="perfil.responsavel"  >
+						</label>
+						<label class="item item-input item-floating-label" ng-show="user.login.id_tipo_login==3 || user.login.id_tipo_login==4">
+							<span class="input-label">Data Nascimento</span>
+							<input type="text" placeholder="Data Nascimento" name="data_nascimento" ng-model="perfil.data_nascimento"  ui-date-mask="DD-MM-YYYY" >
+						</label>
+						<label class="item item-input item-floating-label" ng-show="user.login.id_tipo_login==3">
+							<span class="input-label">CPF</span>
+							<input type="text" placeholder="CPF" ng-model="perfil.cpf" name="cpf">
+						</label>		   
+						<label class="item item-input item-floating-label" ng-show="user.login.id_tipo_login==3">
+							<span class="input-label">RG</span>
+							<input type="text" placeholder="RG" ng-model="perfil.rg" name="rg"  >
+						</label>			   
+						<label class="item item-input item-floating-label" required>
+							<span class="input-label">Telefone 1</span>
+							<input type="text" placeholder="Telefone 1" ng-model="perfil.telefone" name="telefone">
+							<div ng-messages="formPerfil.telefone.$error">
+							  <div ng-message="required">
+								Favor inserir telefone.
+							  </div>						  
+							</div>
+						</label>				   
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Telefone 2</span>
+							<input type="text" placeholder="Telefone 2" ng-model="perfil.celular" name="celular">
+						</label>
+						<label class="item item-input item-floating-label" ng-show="user.login.id_tipo_login==3">
+							<span class="input-label">Profissão</span>
+							<input type="text" placeholder="Profissão" ng-model="perfil.profissao" name="profissao" >
+						</label>
+						<label class="item item-input item-floating-label" ng-show="user.login.id_tipo_login==3">
+							<span class="input-label">Estado Cívil</span>
+							<input type="text" placeholder="Estado Cívil" ng-model="perfil.estado_civil" name="estado_civil" >
+						</label>
+					</div>				
+				</div>				
+				<div ng-show="tabs==1">
+					<div class="im-wrapper">				
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Endereço</span>
+							<input type="text" placeholder="Endereço" ng-model="perfil.endereco" name="endereco" >
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">CEP</span>
+							<input type="text" placeholder="CEP" ng-model="perfil.cep" name="cep">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Número</span>
+							<input type="text" placeholder="Número" ng-model="perfil.numero" name="numero"  ui-number-mask="0"  >
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Bairro</span>
+							<input type="text" placeholder="Bairro" ng-model="perfil.bairro" name="bairro"  >
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Cidade</span>
+							<input type="text" placeholder="Cidade" ng-model="perfil.cidade" name="cidade"  >
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">UF</span>
+							<input type="text" placeholder="UF" ng-model="perfil.uf" name="uf" >
+						</label>
+					</div>
+				</div>
+				<div ng-show="tabs==2" ng-show="user.login.id_tipo_login==3">
+					<div class="im-wrapper">					
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Dados Bancários</span>
+							<textarea placeholder="Dados Bancários" name="dados_bancarios" ng-model="perfil.dados_bancarios" rows="3" ></textarea>
+						</label>					
+					</div>
+				</div>
+				<div ng-show="tabs==3">	
+					<div class="im-wrapper">					
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Senha</span>
+							<input type="password" placeholder="Senha" ng-model="login.novaSenha" name="senha" >
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Repetir Senha</span>
+							<input type="password" placeholder="Repetir Senha" ng-model="login.repetirNovaSenha" name="repetir_senha"  >
+						</label>
+						<br>
+						<div ng-messages="formPerfil.repetir_senha.$error">
+							<div ng-message="diferentes">
+								As senhas devem ser iguais.
+							</div>						  
+						</div>					
+					</div>
+				</div>
+			</div>
+			<div class="col-33 col-offset-33" style="margin-bottom: 100px;">
+				<button class="button tema" ng-click="salvar(formPerfil)">Salvar</button>	
+			</div>
+		</ion-card>			
+		</form>
+	</ion-content>
+	<div class="bar bar-footer bar-dark">
+		<h1 class="title"><i class="icon ion-heart"></i> Desenvolvido por DNBproject</h1>
+	</div>
+</ion-view>

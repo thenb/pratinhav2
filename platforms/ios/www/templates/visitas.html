@@ -1,0 +1,32 @@
+<ion-view>
+	<ion-nav-title><img src="img/logo4.png" style="padding-top:10px; width: 65%;"/></ion-nav-title>
+	<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+	</ion-nav-buttons>
+	<ion-content style="background: #fff;">
+		<div class="bar bar-subheader bar-stable static text-center">
+            <strong class="title" style="font-size: 20px; padding-top: 5px; color: #ffffff;">Minhas Visitas</strong>
+        </div>
+		<div class="im-wrapper">
+			<label class="item item-input" style="padding-top: 5px;">
+			  <i class="icon ion-search placeholder-icon"></i>
+			  <input type="search" placeholder="Buscar" ng-model="busca">
+			</label>
+			<p class="output" style="padding-top:15px" ng-if="empresas.length!=0">Total da busca: <b>{{filtered.length}}</b></p>
+				<ion-card class="text-center" ng-repeat="visita in empresas | orderBy:'nome' | filter:busca as filtered">					
+					<a class="item item-avatar item-icon-right">
+						<i class="icon ion-person-stalker muted" style="left:16px;padding-left:20px;"></i>
+						<h2>{{visita.nome}}</h2>
+						<p>{{visita.segmento}}</p>
+						<i class="icon ion-checkmark muted"></i>
+					</a>				
+				</ion-card>
+				<h5 class="text-center" ng-if="empresas.length==0">Nenhuma empresa visitada.</h5>
+        </div>			
+	</ion-content>
+	<div class="bar bar-footer bar-dark">
+		<h1 class="title"><i class="icon ion-heart"></i> Desenvolvido por DNBproject</h1>
+	</div>
+</ion-view>
