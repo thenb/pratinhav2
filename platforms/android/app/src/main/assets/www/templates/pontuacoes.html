@@ -1,0 +1,37 @@
+<ion-view>
+	<ion-nav-title><img src="img/logo4.png" style="padding-top:10px; width: 65%;"/></ion-nav-title>
+	<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+	</ion-nav-buttons>
+	<ion-content style="background: #fff;">
+		<div class="bar bar-subheader bar-stable static text-center">
+            <strong class="title" style="font-size: 20px; padding-top: 5px; color: #ffffff;">Pontuação</strong>
+        </div>
+		<div class="im-wrapper" style="margin-bottom: 100px;">	
+		<div class="row" style="margin-bottom: 15px;">
+			<div class="col"><h4 class="text-center">Pontuação Atual: </h4></div>
+			<div class="col"><h4 class="text-center"><strong>{{pontuacaoAtual}}</strong> Pontos</h4></div>
+		</div>
+			
+		<label class="item item-input item-select" style="padding-top: 5px;">
+			<div class="input-label">Selecione</div>
+			<select ng-model="campanhaAtual" ng-options="campanhaAtual.id as campanhaAtual.nome for campanhaAtual in campanhas" ng-change="changeCampPoints(campanhaAtual)"></select>
+		</label>
+		<p class="output" style="padding-top:15px" ng-if="pontuacoes.length!=0">Total da busca: <b>{{filtered.length}}</b></p>
+			<ion-card class="text-center" ng-repeat="pontos in pontuacoes | filter:busca as filtered">					
+				<a class="item item-avatar item-icon-right">
+					<h2 style="text-align: left;">{{pontos.pontos}} Pontos</h2>
+					<p style="text-align: left;">{{pontos.descricao}}</p>
+					<p style="text-align: left;">Pontuado por: {{pontos.nome}}</p>
+					<i class="icon ion-trophy muted" style="left: 20px;"></i>
+				</a>				
+			</ion-card>
+			<h5 class="text-center" ng-if="pontuacoes.length==0">Nenhuma pontuação cadastrada.</h5>
+        </div>		
+	</ion-content>
+	<div class="bar bar-footer bar-dark">
+		<h1 class="title"><i class="icon ion-heart"></i> Desenvolvido por DNBproject</h1>
+	</div>
+</ion-view>

@@ -1,0 +1,108 @@
+<ion-view>
+	<ion-nav-title><img src="img/logo4.png" style="padding-top:10px; width: 65%;"/></ion-nav-title>
+	<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+	</ion-nav-buttons>	
+	<ion-content style="background: #fff;">
+		<div class="hero" style="background-color: #27386D">
+			<div class="content">
+				<div class="avatar" style="background-image: url('img/user.jpg');"></div>				
+				<h3>{{especificador1.nome}}</h3>
+				<h4 style="font-style: italic;">Especificador</h4>				
+			</div>
+		</div>			
+		<ion-card class="text-center">
+			<div class="list" style="padding-bottom:40px">				
+				<div class="tabs tabs-dark tabs-icon-top static">
+					<a ng-click="changeTabs(0)" class="tab-item">
+						<i class="icon ion-person"></i> Dados Pessoais
+					</a>
+					<a ng-click="changeTabs(1)" class="tab-item">
+						<i class="icon ion-map"></i> Endereço
+					</a>
+					<!--<a ng-click="changeTabs(2)" class="tab-item">
+						<i class="icon ion-images"></i> Financeiro
+					</a>-->
+				</div>				
+				<div ng-if="tabs==0">
+					<div class="im-wrapper">
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Nome</span>
+							<input type="text" placeholder="Nome" ng-model="especificador1.nome" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Sobrenome</span>
+							<input type="text" placeholder="Sobrenome" ng-model="especificador1.sobrenome" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Empresa</span>
+							<input type="text" placeholder="Empresa" ng-model="especificador1.empresa" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Data Nascimento</span>
+							<input type="text" placeholder="Data Nascimento" ng-model="especificador1.data_nascimento" ng-disabled="true" ui-date-mask="DD-MM-YYYY" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">CPF</span>
+							<input type="text" placeholder="CPF" ng-model="especificador1.cpf" ng-disabled="true"  ui-br-cpf-mask style="background-color:white">
+						</label>		   
+						<label class="item item-input item-floating-label">
+							<span class="input-label">RG</span>
+							<input type="text" placeholder="RG" ng-model="especificador1.rg" ng-disabled="true" style="background-color:white">
+						</label>			   
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Telefone 1</span>
+							<input type="text" placeholder="Telefone 1" ng-model="especificador1.telefone" ui-br-phone-number ng-disabled="true" style="background-color:white">
+						</label>				   
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Telefone 2</span>
+							<input type="text" placeholder="Telefone 2" ng-model="especificador1.celular" ui-br-phone-number ng-disabled="true" style="background-color:white">
+						</label>	
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Profissão</span>
+							<input type="text" placeholder="Profissão" ng-model="especificador1.profissao" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Estado Cívil</span>
+							<input type="text" placeholder="Estado Cívil" ng-model="especificador1.estado_civil"ng-disabled="true" style="background-color:white">
+						</label>
+					</div>				
+				</div>				
+				<div ng-if="tabs==1">
+					<div class="im-wrapper">				
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Endereço</span>
+							<input type="text" placeholder="Endereço" ng-model="especificador1.endereco" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">CEP</span>
+							<input type="text" placeholder="CEP" ng-model="especificador1.cep" ng-disabled="true" ui-br-cep-mask style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Número</span>
+							<input type="text" placeholder="Número" ng-model="especificador1.numero"  ui-number-mask="0" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Bairro</span>
+							<input type="text" placeholder="Bairro" ng-model="especificador1.bairro"  ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Cidade</span>
+							<input type="text" placeholder="Cidade" ng-model="especificador1.cidade"  ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">UF</span>
+							<input type="text" placeholder="UF" ng-model="especificador1.uf"  ng-disabled="true" style="background-color:white">
+						</label>
+					</div>
+				</div>
+			</div>
+		</ion-card>
+		<br><br>
+	</ion-content>
+	<div class="bar bar-footer bar-dark">
+		<h1 class="title"><i class="icon ion-heart"></i> Desenvolvido por DNBproject</h1>
+	</div>
+</ion-view>

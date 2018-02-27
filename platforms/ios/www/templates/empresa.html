@@ -1,0 +1,92 @@
+<ion-view>
+	<ion-nav-title><img src="img/logo4.png" style="padding-top:10px; width: 65%;"/></ion-nav-title>
+	<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+	</ion-nav-buttons>	
+	<ion-content style="background: #fff;">
+		<div class="hero" style="background-color: #27386D">
+			<div class="content">
+				<div class="avatar" style="background-image: url('img/favico.png');"></div>				
+				<h3>{{empresa1.nome}}</h3>
+				<h4 style="font-style: italic;">Empresa</h4>				
+			</div>
+		</div>			
+		<ion-card class="text-center">
+			<div class="list" style="padding-bottom:40px">				
+				<div class="tabs tabs-dark tabs-icon-top static">
+					<a ng-click="changeTabs(0)" class="tab-item">
+						<i class="icon ion-person"></i> Dados Pessoais
+					</a>
+					<a ng-click="changeTabs(1)" class="tab-item">
+						<i class="icon ion-map"></i> Endereço
+					</a>
+					<!--<a ng-click="changeTabs(2)" class="tab-item">
+						<i class="icon ion-images"></i> Financeiro
+					</a>-->
+				</div>				
+				<div ng-if="tabs==0">
+					<div class="im-wrapper">				
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Nome</span>
+							<input type="text" placeholder="Nome" ng-model="empresa1.nome" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Segmento</span>
+							<input type="text" placeholder="Segmento" ng-model="empresa1.segmento" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Responsável</span>
+							<input type="text" placeholder="Responsável" ng-model="empresa1.nome_usuario" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">E-mail</span>
+							<input type="text" placeholder="E-mail" ng-model="empresa1.email" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Telefone 1</span>
+							<input type="text" placeholder="Telefone 1" ng-model="empresa1.telefone" ui-br-phone-number ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Telefone 2</span>
+							<input type="text" placeholder="Telefone 2" ng-model="empresa1.celular" ui-br-phone-number ng-disabled="true" style="background-color:white">
+						</label>					
+					</div>				
+				</div>				
+				<div ng-if="tabs==1">
+					<div class="im-wrapper">				
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Endereço 2</span>
+							<input type="text" placeholder="Endereço 2" ng-model="empresa1.endereco" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">CEP</span>
+							<input type="text" placeholder="CEP" ng-model="empresa1.cep" ng-disabled="true" ui-br-cep-mask style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Número</span>
+							<input type="text" placeholder="Número" ng-model="empresa1.numero" ng-disabled="true" ui-number-mask="0" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Bairro</span>
+							<input type="text" placeholder="Bairro" ng-model="empresa1.bairro" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Cidade</span>
+							<input type="text" placeholder="Cidade" ng-model="empresa1.cidade" ng-disabled="true" style="background-color:white">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">UF</span>
+							<input type="text" placeholder="UF" ng-model="empresa1.uf" ng-disabled="true" style="background-color:white">
+						</label>					
+					</div>						
+				</div>						
+			</div>
+		</ion-card>
+		<br><br>
+	</ion-content>
+	<div class="bar bar-footer bar-dark">
+		<h1 class="title"><i class="icon ion-heart"></i> Desenvolvido por DNBproject</h1>
+	</div>
+</ion-view>

@@ -1,0 +1,35 @@
+<ion-view>
+	<ion-nav-title><img src="img/logo4.png" style="padding-top:10px; width: 65%;"/></ion-nav-title>
+	<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+	</ion-nav-buttons>
+	<ion-content style="background: #fff;">
+		<div class="bar bar-subheader bar-stable static text-center">
+            <strong class="title" style="font-size: 20px; padding-top: 5px; color: #ffffff;">Empresas</strong>
+        </div>
+		<div class="im-wrapper" style="margin-bottom: 100px;">		
+			<label class="item item-input" style="padding-top: 5px;">
+			  <i class="icon ion-search placeholder-icon"></i>
+			  <input type="search" placeholder="Buscar" ng-model="busca">
+			</label>
+			<p class="output" style="padding-top:15px">Total da busca: <b>{{filtered.length}}</b></p>
+				<ion-card class="text-center" ng-repeat="empresa in empresas | orderBy:'nome' | filter:busca as filtered">					
+					<a ng-click="detalhes(empresa)" class="item item-avatar item-icon-right">
+						<img src="img/favico.png">
+						<!--<i class="icon ion-home muted" style="left: 16px;"></i>-->
+						<h2 style="text-align: left;">{{empresa.nome}}</h2>
+						<h2 style="text-align: left;">Segmento:{{empresa.segmento}}</h2>
+						<h2 style="text-align: left;" ng-if="user.login.id_tipo_login==2">Pontos: {{empresa.pontosEmpresa}}</h2>
+						<h2 style="text-align: left;" ng-if="user.login.id_tipo_login==2">Indicações: {{empresa.qtdIndicacoes}}</h2>
+						<h2 style="text-align: left;" ng-if="user.login.id_tipo_login==2">Presença: {{empresa.qtdPresenca}}</h2>
+						<i class="icon ion-chevron-right muted small-icon"></i>
+					</a>				
+				</ion-card>
+		</div>	
+	</ion-content>
+	<div class="bar bar-footer bar-dark">
+		<h1 class="title"><i class="icon ion-heart"></i> Desenvolvido por DNBproject</h1>
+	</div>
+</ion-view>

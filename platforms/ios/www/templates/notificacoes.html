@@ -1,0 +1,35 @@
+<ion-view>
+	<ion-nav-title><img src="img/logo4.png" style="padding-top:10px; width: 65%;"/></ion-nav-title>
+	<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+	</ion-nav-buttons>
+	<ion-content style="background: #fff;">	
+		<ion-card class="text-center">			
+			<div class="bar bar-subheader bar-stable static text-center">
+				<strong class="title" style="font-size: 20px; padding-top: 5px; color: #ffffff;">Notificações</strong>
+			</div>
+			<div class="list"  style="padding-bottom:40px">
+					<a ng-repeat="item in notificacoes" class="item item-avatar item-icon-right" ng-click="verificar(item)" ng-style="set_color(item)">
+						<img src="img/premio.png" ng-if="item.tipo==1">
+						<img src="img/empresa.png" ng-if="item.tipo==2">
+						<img src="img/empresa.png" ng-if="item.tipo==3">
+						<img src="img/calendario.png" ng-if="item.tipo==4">
+						<img src="img/premio.png" ng-if="item.tipo==5">
+						<img src="img/calendario.png" ng-if="item.tipo==6">	
+						<img src="img/empresa.png" ng-if="item.tipo==7">						
+						<h2 style="text-align: left;">{{ item.titulo }}</h2>
+						<p style="text-align: left;">{{ item.msg }}</p>
+						<i class="icon ion-chevron-right muted small-icon"></i>
+					</a>
+				
+			</div> 
+		</ion-card>	
+		<h5 class="text-center" ng-if="notificacoes.length==0">Nenhuma notificação recebida.</h5>
+		<br><br>
+	</ion-content>
+	<div class="bar bar-footer bar-dark">
+		<h1 class="title"><i class="icon ion-heart"></i> Desenvolvido por DNBproject</h1>
+	</div>
+</ion-view>
