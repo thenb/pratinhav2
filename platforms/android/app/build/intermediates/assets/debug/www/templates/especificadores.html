@@ -1,0 +1,33 @@
+<ion-view>
+	<ion-nav-title><img src="img/logo4.png" style="padding-top:10px; width: 65%;"/></ion-nav-title>
+	<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+	</ion-nav-buttons>
+	<ion-content style="background: #fff;">
+		<div class="bar bar-subheader bar-stable static text-center">
+            <strong class="title" style="font-size: 20px; padding-top: 5px; color: #ffffff;">Especificadores</strong>
+        </div>
+		<div class="im-wrapper" style="margin-bottom: 100px;">		
+			<label class="item item-input" style="padding-top: 5px;">
+			  <i class="icon ion-search placeholder-icon"></i>
+			  <input type="search" placeholder="Buscar" ng-model="busca">
+			</label>
+			<p class="output" style="padding-top:15px">Total da busca: <b>{{filtered.length}}</b></p>
+				<ion-card class="text-center" ng-repeat="especificador in especificadores | orderBy:'nome' | filter:busca as filtered">
+					<a ng-click="detalhes(especificador)" class="item item-avatar item-icon-right">
+						<img src="img/mini.jpg">
+						<h2 style="text-align: left;">{{especificador.nome}} {{especificador.sobrenome}} </h2>
+						<p style="text-align: left;">{{especificador.empresa}}</p>
+						<h2 style="text-align: left;" ng-if="user.login.id_tipo_login==2">Pontos: {{especificador.pontos}}</h2>
+						<i class="icon ion-chevron-right muted small-icon"></i>
+					</a>				
+				</ion-card>	
+				<h5 class="text-center" ng-if="notificacoes.length==0">Nenhum especificador cadastrado.</h5>
+		</div>
+	</ion-content>
+	<div class="bar bar-footer bar-dark">
+		<h1 class="title"><i class="icon ion-heart"></i> Desenvolvido por DNBproject</h1>
+	</div>
+</ion-view>

@@ -1,0 +1,77 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\pratinhav2\\pratinha\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Francisco Filho\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\89f508d8c792975d40ac83916cce4cf3\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "4,7",
+                        "startColumns": "0,0",
+                        "startOffsets": "274,437",
+                        "endColumns": "63,166",
+                        "endOffsets": "337,603"
+                    },
+                    "to": {
+                        "startLines": "2,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "105,288",
+                        "endColumns": "67,166",
+                        "endOffsets": "168,450"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Francisco Filho\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\08a581a77f9a8e8a1e5c0cfb59373400\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "176",
+                        "endColumns": "77",
+                        "endOffsets": "253"
+                    },
+                    "to": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "599",
+                        "endColumns": "81",
+                        "endOffsets": "676"
+                    }
+                },
+                {
+                    "source": "C:\\pratinhav2\\pratinha\\platforms\\android\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,312,394,498,601,721",
+                        "endColumns": "143,112,81,103,102,119,101",
+                        "endOffsets": "194,307,389,493,596,716,818"
+                    },
+                    "to": {
+                        "startLines": "6,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "455,681,794,876,980,1083,1203",
+                        "endColumns": "143,112,81,103,102,119,101",
+                        "endOffsets": "594,789,871,975,1078,1198,1300"
+                    }
+                },
+                {
+                    "source": "C:\\pratinhav2\\pratinha\\platforms\\android\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "165,55,106",
+                        "endColumns": "63,50,58",
+                        "endOffsets": "224,101,160"
+                    },
+                    "to": {
+                        "startLines": "3,4,14",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "173,237,1305",
+                        "endColumns": "63,50,58",
+                        "endOffsets": "232,283,1359"
+                    }
+                }
+            ]
+        }
+    ]
+}

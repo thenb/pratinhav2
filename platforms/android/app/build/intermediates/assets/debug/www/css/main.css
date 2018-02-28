@@ -1,0 +1,138 @@
+/* Your application styles go here */
+.bar .button {
+    min-height: 50px;
+    min-width: 50px;
+    max-width: 48px;
+    margin-bottom: 0;
+    max-height: 50px;
+    width: 50px;
+}
+button.scss:214
+
+.notificacaoLista{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 50px;
+    color: #1B295B;
+}
+.card>.item.item-thumbnail-left, .item-thumbnail-left, .item-thumbnail-left .item-content {
+    padding-left: 80px;
+}
+.pane, .view {
+    background-color: #1d2f60!important;
+}
+.bar-footer {
+    background-color: transparent!important;
+}
+.bar  {
+    background-color: #1d2f60!important;
+	height: 50px;
+}
+.bar .title {
+	color: #fff;
+	font-size: 12px;
+	height: 49px;
+}
+.input-label {
+    color: #f8f8f8;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+    color: #b2b2b2;
+}
+.button.button-login {
+    border-color: #12224c;
+    background-color: #ffffff;
+    color: #111;
+}
+
+.toggle.toggle-positive input:checked + .track {
+  border-color: #28a54c;
+  background-color: #28a54c; 
+}
+
+.platform-android .bar .title {
+    font-size: 12px;
+}
+.muted {
+    color: #1d2f60!important;
+}  
+
+.itens_medios {
+	font-size: 16px;
+}
+.badge {
+    font-size: 12px;
+}
+.item-content {
+	font-size: 16px!important;
+}
+.has-expanded-header {
+    top: 150px !important;
+}
+input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly] {
+    background-color: transparent;
+}
+
+.item-floating-label .input-label {
+   top: 0;
+   opacity: 1;
+}
+.input-label {
+    color: #444;
+}
+.input-label-login {
+    color: #f8f8f8;
+}
+.tabs-dark > .tabs, .tabs.tabs-dark {
+    border-color: #1d2f60;
+    background-color: #1d2f60;
+	padding: 2px;
+    color: #fff;
+	margin-top: -1px;
+}
+.item-input {
+	padding-top: 15px;
+}
+.list {
+    padding-top: 0;
+}
+.tema {
+	background: #1d2f60!important;
+    color: #fff!important;
+}
+.card>.item-avatar, .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
+    padding-left: 70px;
+}
+.small-icon {
+	font-size: 17px !important;
+}
+
+.bar-subheader{
+	background-color: #27386D!important;
+	color: #ffffff!important;
+}
+.checkbox input:disabled:checked:before, .checkbox input:disabled:checked + .checkbox-icon:before {
+    background: #27386d;
+}
+.bar .title + .button:last-child, .bar > .button + .button:last-child, .bar > .button.pull-right, .bar .buttons.pull-right, .bar .title + .buttons {
+    position: absolute;
+    right: 5px;
+	top: 0px;
+}
+.menu .bar.bar-header.expanded {
+    background-image: url(../img/back2.png);
+    background-size: 120%;
+    background-position: 0%;
+    transition: all .5s ease-in-out;
+}
+.menu .avatar {
+    top: 16px;
+    left: 16px;
+    height: 75px;
+    width: 75px;
+}
+.hero {
+    background-image: url(../img/back2.png);
+	background-position: center;
+}

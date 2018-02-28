@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <integer name="google_play_services_version">11910000</integer>
+    <string name="activity_name">@string/launcher_name</string>
+    <string name="app_name">Prata da Casa</string>
+    <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. Please try again.</string>
+    <string name="default_web_client_id" translatable="false">903930090400-var1gho4oqq7uo9adr38bbh7nij29e79.apps.googleusercontent.com</string>
+    <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
+    <string name="firebase_database_url" translatable="false">https://pratadacasa-178717.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">903930090400</string>
+    <string name="google_api_key" translatable="false">AIzaSyD7KHp12PIhxsz8PkmIM__Ss5UHoutCTK4</string>
+    <string name="google_app_id" translatable="false">1:903930090400:android:984082b8d8fe07be</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD7KHp12PIhxsz8PkmIM__Ss5UHoutCTK4</string>
+    <string name="google_storage_bucket" translatable="false">pratadacasa-178717.appspot.com</string>
+    <string name="launcher_name">@string/app_name</string>
+</resources>
