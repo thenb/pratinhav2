@@ -31,7 +31,6 @@
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="CDVIonicKeyboard" />
     </feature>
-    <allow-navigation href="http://localhost:8080/*" />
     <feature name="CDVWKWebViewEngine">
         <param name="ios-package" value="CDVWKWebViewEngine" />
     </feature>
@@ -105,5 +104,7 @@
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashScreenDelay" value="30000" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="FadeSplashScreen" value="false" />
 </widget>

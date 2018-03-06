@@ -188,17 +188,7 @@ angular.module('starter.controllers', [])
 					console.log(token)	
 				});
 						
-			});
-			FCMPlugin.onNotification(function(data){
-				console.log('entrou?')
-				if(data.wasTapped){
-				//Notification was received on device tray and tapped by the user.
-				$state.go('app.notificacoes');
-				}else{
-				//Notification was received in foreground. Maybe the user needs to be notified.
-				$state.go('app.notificacoes');
-				}
-			});
+			});			
 		}	
 	};	
 	
