@@ -40,22 +40,10 @@ angular.module('starter', ['ionic','ionic-material','restangular','ngMessages','
 		  cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
 		  cordova.plugins.Keyboard.disableScroll(true);
 		}
-		FCMPlugin.onNotification(function(data){
-				console.log('entrou?')
-				if(data.wasTapped){
-				//Notification was received on device tray and tapped by the user.
-				$state.go('app.notificacoes');
-				}else{
-				//Notification was received in foreground. Maybe the user needs to be notified.
-				$state.go('app.notificacoes');
-				}
-			});
-		
 		if (window.StatusBar) {
 		  // org.apache.cordova.statusbar required
 		  StatusBar.styleDefault();
 		}	
-		
 	});	
 	$rootScope.user = {};	
 	
